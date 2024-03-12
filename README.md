@@ -29,8 +29,8 @@ Now the app is accessible at ```localhost:3000```
 
 # Update diary
 2024.3.12: preparing the art design from following CodePen repo
-* [CodePen Home Snap scroll demo page styling](https://codepen.io/giana/pen/rNRzgRj)
-* [CodePen Home Snap scroll demo page styling](https://codepen.io/giana/pen/BabdgjB)
+* [CodePen Home Snap scroll demo page styling-1](https://codepen.io/giana/pen/rNRzgRj)
+* [CodePen Home Snap scroll demo page styling-2](https://codepen.io/giana/pen/BabdgjB)
 * [God rays](https://codepen.io/TWilson/pen/jOdWqbZ)
 * [Liquid content reveal](https://codepen.io/ksenia-k/pen/dyaeGgO)
 * [Liquid background effect](https://codepen.io/tahazsh/pen/gOqNZyw)
