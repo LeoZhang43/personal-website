@@ -1,3 +1,5 @@
+
+
 # Update diary
 ### 2024.3.12: preparing the art design from following CodePen repo
 * [CodePen Home Snap scroll demo page styling-1](https://codepen.io/giana/pen/rNRzgRj)
