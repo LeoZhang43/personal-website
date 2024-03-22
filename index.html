@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="godray.css">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="site-header">
+          <img src="backgroundRemove.png" alt="">
           <h1 class="sr-only">Yuhang's personal website</h1>
         
           <!-- Because Chrome crashes if an overflow is set on the fieldset while a named timeline is on a child element -->
           <!-- ¯\_(ツ)_/¯ -->
           <div class="fieldset-wrapper">
-            <fieldset>
+            <fieldset id="nav-bar">
               <legend class="sr-only">label</legend>
       
               <!-- radio buttons for each of the @keyframes above -->
               <input type="radio" id="intro" name="effect" value="blink" checked class="sr-only">
-              <label for="intro">Intro</label>
+              <label for="intro" value="intro">Intro</label>
       
               <input type="radio" id="aboutme" name="effect" value="horizontal-scroll" class="sr-only">
-              <label for="aboutme">About me</label>
+              <label for="aboutme" value="aboutme">About me</label>
       
               <input type="radio" id="education-works-and-projects" name="effect" value="backwards-scroll" class="sr-only">
-              <label for="education-works-and-projects">Education, Works and Projects</label>
+              <label for="education-works-and-projects" value="education-works-and-projects">Education, Works and Projects</label>
       
               <input type="radio" id="skills" name="effect" value="zoom-scroll" class="sr-only">
-              <label for="skills">Skills</label>
+              <label for="skills" value="skills">Skills</label>
               
               <input type="radio" id="contact-me" name="effect" value="zoom-scroll" class="sr-only">
-              <label for="contact-me">Contact Me</label>
+              <label for="contact-me" value="contact-me">Contact Me</label>
             </fieldset>
           </div>
       
           <nav>
             <ul class="indicator" id="indicator">
-              <li><a href="#intro-part" value="intro"></a></li>
-              <li><a href="#aboutme-part" value="aboutme"></a></li>
-              <li><a href="#education-part" value="education-works-and-projects"></a></li>
-              <li><a href="#skills-part" value="skills"></a></li>
-              <li><a href="#contactme-part" value="contact-me"></a></li>
+              <li><a href="#intro-part" value="intro" id="intro-li"></a></li>
+              <li><a href="#aboutme-part" value="aboutme" id="aboutme-li"></a></li>
+              <li><a href="#education-part" value="education-works-and-projects" id="education-works-and-projects-li"></a></li>
+              <li><a href="#skills-part" value="skills" id="skills-li"></a></li>
+              <li><a href="#contactme-part" value="contact-me" id="contact-me-li"></a></li>
             </ul>
           </nav>
         </header>
         <main>
           <section id="intro-part" class="section">
+            <div class="intro-background"></div>
             <div class="content">
-              <h2><strong>First</strong>, we set up the <em>snapping</em> points</h2>
+              <h2><strong>Hi</strong>, I'm <em>Yuhang Zhang</em>, a frontend developer</h2>
               <div class="text">
-                <img src="https://assets.codepen.io/197359/flower-white.png" alt="">
-                <p>We set the scrolling element, in this case our <code class="selector">HTML</code> element, to forcibly snap to the Y axis by using <code class="property">scroll-snap-type: y mandatory</code>.</p>
-      
-                <p>And then we set <code class="selector">section</code> as the snapping elements by using <code class="property">scroll-snap-align: start</code>.</p>
+                <h4>
+                  I'm a computer engineer student
+                  who is right now pursuing my master degree
+                  at <code class="selector">University of Southern California</code>.
+                  I've 1 year of working experience in <code class="property">frontend 
+                  development</code>.I love dogs, running and arcade fighting game
+                </h4>
               </div>
             </div>
           </section>
