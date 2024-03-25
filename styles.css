@@ -210,6 +210,20 @@
     font-weight: 200;
     line-height: var(--font-size);
   }
+  h5{
+    --font-size-min: var(--h5-min);
+    --font-size-max: var(--h5-max);
+    font-size: var(--font-size);
+    font-weight: 200;
+    line-height: var(--font-size);
+  }
+  h6{
+    --font-size-min: var(--h6-min);
+    --font-size-max: var(--h6-max);
+    font-size: var(--font-size);
+    font-weight: 200;
+    line-height: var(--font-size);
+  }
   * {
     /* Step 1: Establish individual responsive font-size */
   
@@ -355,12 +369,12 @@
   inset-inline: 0;
   z-index: 10000;
 
-  img {
+  #avater-img {
     position: absolute;
     left: 0px;
     object-fit: contain;
     object-position: top left;
-    height: 80px;
+    height: 60px;
   }
 
   @media (min-width: 64rem) {
@@ -697,7 +711,7 @@ h2 {
     inset: 0;
     object-fit: contain;
     object-position: top left;
-    z-index: -1;
+    z-index: 2;
   }
 
   @media (min-width: 64rem) {
@@ -749,7 +763,7 @@ section:nth-child(2) {
   --color-highlight: var(--color-yellow);
   --color-selector: var(--color-green);
   --image: url('https://assets.codepen.io/197359/flower-yellow.png');
-  --margin-top: 10dvi;
+
 }
 
 section:nth-child(3) {
@@ -847,72 +861,4 @@ section:nth-child(5) {
       );
     }
   }
-}
-
-@keyframes jumbo {
-  from {
-      background-position: 50% 50%, 50% 50%;
-  }
-  to {
-      background-position: 100% 50%, 100% 50%;
-  }
-}
-
-/* body{
-  box-sizing: border-box;
-} */
-
-.intro-background {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  top: -128px;
-  /* left: -128px; */
-  --stripes: repeating-linear-gradient(
-      100deg,
-      #fff 0%,
-      #fff 7%,
-      transparent 10%,
-      transparent 12%,
-      #fff 16%
-  );
-  --stripesDark: repeating-linear-gradient(
-      100deg,
-      #000 0%,
-      #000 7%,
-      transparent 10%,
-      transparent 12%,
-      #000 16%
-  );
-  --rainbow: repeating-linear-gradient(
-      100deg,
-      #60a5fa 10%,
-      #e879f9 15%,
-      #60a5fa 20%,
-      #5eead4 25%,
-      #60a5fa 30%
-  );
-  background-image: var(--stripes), var(--rainbow);
-  background-size: 300%, 200%;
-  background-position: 50% 50%, 50% 50%;
-
-  filter: blur(10px) invert(100%);
-
-  mask-image: radial-gradient(ellipse at 100% 0%, black 50%, transparent 70%);
-
-  pointer-events: none;
-}
-
-.intro-background::after {
-  content: "";
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  top: -128px;
-  inset: 0;
-  background-image: var(--stripes), var(--rainbow);
-  background-size: 200%, 100%;
-  animation: jumbo 20s linear infinite;
-  /* background-attachment: fixed; */
-  mix-blend-mode: difference;
 }

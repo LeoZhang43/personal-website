@@ -2,10 +2,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="godray.css">
+        <link rel="stylesheet" href="liquid.css">
     </head>
     <body>
         <header class="site-header">
-          <img src="backgroundRemove.png" alt="">
+          <img src="backgroundRemove.png" alt="" id="avater-img">
           <h1 class="sr-only">Yuhang's personal website</h1>
         
           <!-- Because Chrome crashes if an overflow is set on the fieldset while a named timeline is on a child element -->
@@ -53,20 +55,30 @@
                   who is right now pursuing my master degree
                   at <code class="selector">University of Southern California</code>.
                   I've 1 year of working experience in <code class="property">frontend 
-                  development</code>.I love dogs, running and arcade fighting game
+                  development</code>.I love dogs, running and arcade video games
                 </h4>
               </div>
             </div>
           </section>
           <section id="aboutme-part" class="section">
+            <div class="liquid-content">
+                <img id="liquid-img" src="onthebattleship.jpg"/>
+            </div>
+            <canvas id="liquid-canvas"></canvas>
             <div class="content">
-              <h2><strong>Next</strong>, we set up the <em>scrolling</em> animation</h2>
-      
               <div class="text">
-                <img src="https://assets.codepen.io/197359/flower-yellow.png" alt="">
-                <p>We track the <code class="property">view()</code> position of the <code class="selector">section</code> elements using the named timeline <code class="property">view-timeline: --section;</code>. We had previously set the <code class="property">timeline-scope: --section</code> up in our <code class="selector">HTML</code> element, so we can access it from anywhere in the document.</p>
-      
-                <p>We animate the <code class="selector">.content</code> children using <code class="property">animation-timeline: --section;</code>. The <code class="selector">.content</code> element will now animate based on its parent <code class="selector">section</code>'s position. This is important due to how we're handling the layout in the next section.</p>
+                <h6>
+                  After spending 
+                </h6>
+              </div>
+              <div class="text">
+                <h6>
+                  I'm a computer engineer student
+                  who is right now pursuing my master degree
+                  at <code class="selector">University of Southern California</code>.
+                  I've 1 year of working experience in <code class="property">frontend 
+                  development</code>.I love dogs, running and arcade fighting game
+                </h6>
               </div>
             </div>
           </section>
@@ -115,6 +127,165 @@
         <footer>
           <p>That's it <span class="emoji">🌸</span></p>
         </footer>
+        <script type="x-shader/x-fragment" id="vertShader">
+            precision highp float;
+        
+            attribute vec2 aPosition;
+            varying vec2 vUv;
+            varying vec2 vL;
+            varying vec2 vR;
+            varying vec2 vT;
+            varying vec2 vB;
+            uniform vec2 u_vertex_texel;
+        
+            void main () {
+                vUv = aPosition * .5 + .5;
+                vL = vUv - vec2(u_vertex_texel.x, 0.);
+                vR = vUv + vec2(u_vertex_texel.x, 0.);
+                vT = vUv + vec2(0., u_vertex_texel.y);
+                vB = vUv - vec2(0., u_vertex_texel.y);
+                gl_Position = vec4(aPosition, 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderAdvection">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying vec2 vUv;
+            uniform sampler2D u_velocity_txr;
+            uniform sampler2D u_input_txr;
+            uniform vec2 u_vertex_texel;
+            uniform vec2 u_output_textel;
+            uniform float u_dt;
+            uniform float u_dissipation;
+        
+            vec4 bilerp (sampler2D sam, vec2 uv, vec2 tsize) {
+                vec2 st = uv / tsize - 0.5;
+        
+                vec2 iuv = floor(st);
+                vec2 fuv = fract(st);
+        
+                vec4 a = texture2D(sam, (iuv + vec2(0.5, 0.5)) * tsize);
+                vec4 b = texture2D(sam, (iuv + vec2(1.5, 0.5)) * tsize);
+                vec4 c = texture2D(sam, (iuv + vec2(0.5, 1.5)) * tsize);
+                vec4 d = texture2D(sam, (iuv + vec2(1.5, 1.5)) * tsize);
+        
+                return mix(mix(a, b, fuv.x), mix(c, d, fuv.x), fuv.y);
+            }
+        
+            void main () {
+                vec2 coord = vUv - u_dt * bilerp(u_velocity_txr, vUv, u_vertex_texel).xy * u_vertex_texel;
+                gl_FragColor = u_dissipation * bilerp(u_input_txr, coord, u_output_textel);
+                gl_FragColor.a = 1.;
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderDivergence">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying highp vec2 vUv;
+            varying highp vec2 vL;
+            varying highp vec2 vR;
+            varying highp vec2 vT;
+            varying highp vec2 vB;
+            uniform sampler2D u_velocity_txr;
+        
+            void main () {
+                float L = texture2D(u_velocity_txr, vL).x;
+                float R = texture2D(u_velocity_txr, vR).x;
+                float T = texture2D(u_velocity_txr, vT).y;
+                float B = texture2D(u_velocity_txr, vB).y;
+        
+                float div = .5 * (R - L + T - B);
+                gl_FragColor = vec4(div, 0., 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderPressure">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying highp vec2 vUv;
+            varying highp vec2 vL;
+            varying highp vec2 vR;
+            varying highp vec2 vT;
+            varying highp vec2 vB;
+            uniform sampler2D u_pressure_txr;
+            uniform sampler2D u_divergence_txr;
+        
+            void main () {
+                float L = texture2D(u_pressure_txr, vL).x;
+                float R = texture2D(u_pressure_txr, vR).x;
+                float T = texture2D(u_pressure_txr, vT).x;
+                float B = texture2D(u_pressure_txr, vB).x;
+                float C = texture2D(u_pressure_txr, vUv).x;
+                float divergence = texture2D(u_divergence_txr, vUv).x;
+                float pressure = (L + R + B + T - divergence) * 0.25;
+                gl_FragColor = vec4(pressure, 0., 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderGradientSubtract">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying highp vec2 vUv;
+            varying highp vec2 vL;
+            varying highp vec2 vR;
+            varying highp vec2 vT;
+            varying highp vec2 vB;
+            uniform sampler2D u_pressure_txr;
+            uniform sampler2D u_velocity_txr;
+        
+            void main () {
+                float L = texture2D(u_pressure_txr, vL).x;
+                float R = texture2D(u_pressure_txr, vR).x;
+                float T = texture2D(u_pressure_txr, vT).x;
+                float B = texture2D(u_pressure_txr, vB).x;
+                vec2 velocity = texture2D(u_velocity_txr, vUv).xy;
+                velocity.xy -= vec2(R - L, T - B);
+                gl_FragColor = vec4(velocity, 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderPoint">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying vec2 vUv;
+            uniform sampler2D u_input_txr;
+            uniform float u_ratio;
+            uniform vec3 u_point_value;
+            uniform vec2 u_point;
+            uniform float u_point_size;
+        
+            void main () {
+                vec2 p = vUv - u_point.xy;
+                p.x *= u_ratio;
+                vec3 splat = pow(2., -dot(p, p) / u_point_size) * u_point_value;
+                vec3 base = texture2D(u_input_txr, vUv).xyz;
+                gl_FragColor = vec4(base + splat, 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderDisplay">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying vec2 vUv;
+            uniform sampler2D u_output_texture;
+        
+            void main () {
+                vec3 C = texture2D(u_output_texture, vUv).rgb;
+                float a = max(C.r, max(C.g, C.b));
+                a = pow(.1 * a, .1);
+                a = clamp(a, 0., 1.);
+                gl_FragColor = vec4(1. - C, 1. - a);
+            }
+        </script>
         <script src="script.js"></script>
+        <script src="liquid.js"></script>
     </body>
 </html>
