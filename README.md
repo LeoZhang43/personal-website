@@ -12,6 +12,8 @@
 * [Glow Button](https://codepen.io/uixmat/pen/rNodjee)
 ### 2024.3.21: using event delegating to handle DOM elements
 * [事件委托和事件冒泡](https://www.notion.so/a03de47e945640d593feb94061d7942e)
+### 2024.3.25: add liquid features in about me section
+* [油膜特效](https://www.notion.so/df779ea50db54efdaa9656fc083acb1c)
 
 # What is this?
 * This is a personal website of myself, building using HTML CSS and JS
