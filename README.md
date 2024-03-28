@@ -10,11 +10,7 @@
 * [Liquid content reveal](https://codepen.io/ksenia-k/pen/dyaeGgO)
 * [Icon pop up](https://codepen.io/kieranfivestars/pen/gbOWbM)
 * [Hover CSS](https://codepen.io/argyleink/pen/poEjvpd)
-* []()
-* []()
-* []()
-* []()
-
+* [Brittany Chiang](https://brittanychiang.com/)
 
 ### 2024.3.21: using event delegating to handle DOM elements
 * [事件委托和事件冒泡](https://www.notion.so/a03de47e945640d593feb94061d7942e)
