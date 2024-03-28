@@ -8,11 +8,19 @@
 * [CodePen Home Snap scroll demo page styling-2](https://codepen.io/giana/pen/BabdgjB)
 * [God rays](https://codepen.io/TWilson/pen/jOdWqbZ)
 * [Liquid content reveal](https://codepen.io/ksenia-k/pen/dyaeGgO)
-* [Liquid background effect](https://codepen.io/tahazsh/pen/gOqNZyw)
-* [Glow Button](https://codepen.io/uixmat/pen/rNodjee)
+* [Icon pop up](https://codepen.io/kieranfivestars/pen/gbOWbM)
+* [Hover CSS](https://codepen.io/argyleink/pen/poEjvpd)
+* []()
+* []()
+* []()
+* []()
+
+
 ### 2024.3.21: using event delegating to handle DOM elements
 * [事件委托和事件冒泡](https://www.notion.so/a03de47e945640d593feb94061d7942e)
 ### 2024.3.25: add liquid features in about me section
+* [油膜特效](https://www.notion.so/df779ea50db54efdaa9656fc083acb1c)
+### 2024.3.28: adjust second page and notice a potential bug
 * [油膜特效](https://www.notion.so/df779ea50db54efdaa9656fc083acb1c)
 
 # What is this?

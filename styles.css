@@ -501,7 +501,7 @@ input {
 }
 
 nav {
-  --indicator-number: 5;
+  --indicator-number: 4;
   --indicator-top: 50dvb;
   --indicator-right: var(--spacing);
 
@@ -536,7 +536,6 @@ nav {
   
     &::before {
       --size: calc(var(--indicator-size));
-  
       border-radius: 50%;
       content: '';
       color: var(--color-indicator, var(--color-text));
@@ -574,6 +573,7 @@ nav {
       content: '';
       border: 1px solid;
       border-radius: 50%;
+
       display: block;
       width: var(--indicator-size);
       height: var(--indicator-size);
@@ -761,7 +761,7 @@ section:nth-child(1) {
 
 section:nth-child(2) {
   --color-highlight: var(--color-yellow);
-  --color-selector: var(--color-green);
+  --color-selector: var(--color-red);
   --image: url('https://assets.codepen.io/197359/flower-yellow.png');
 
 }
@@ -778,12 +778,12 @@ section:nth-child(4) {
   --image: url('https://assets.codepen.io/197359/flower-red.png');
 }
 
-section:nth-child(5) {
+/* section:nth-child(5) {
   --color-highlight: var(--color-purple);
   --color-selector: var(--color-red-2);
   --image: url('https://assets.codepen.io/197359/flower-purple.png');
   --margin-top: 10dvi;
-}
+} */
 
 @layer customize{
   html{

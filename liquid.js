@@ -81,7 +81,7 @@ canvas.addEventListener("mousemove", (e) => {
     pointer.x = e.pageX;
     pointer.y = e.pageY - 700;
     pointer.firstMove = true;
-    console.log(e.pageX + " " + e.pageY);
+    // console.log(e.pageX + " " + e.pageY);
     // console.log("move detected")
 });
 
@@ -249,6 +249,7 @@ function render() {
     prevTimestamp = Date.now();
 
     if (!pointer.firstMove) {
+        // pointer.firstMove = true;
         pointer.moved = true;
         const newX = (.65 + .2 * Math.cos(.006 * prevTimestamp) * Math.sin(.008 * prevTimestamp)) * window.innerWidth;
         const newY = (.5 + .12 * Math.sin(.01 * prevTimestamp)) * window.innerHeight;

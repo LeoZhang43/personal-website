@@ -5,11 +5,22 @@ canvas {
     z-index: 10;
 }
 
+.handwritten{
+    pointer-events: none;
+    z-index: 11;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    font-size: 40px;
+}
+
 #aboutme-part{
     padding: 0px;
     .content{
-        padding: 128px;
-        color: white;
+        padding: 256px;
+        color: black;
+        pointer-events: none;
+        z-index: 11;
     }
 }
 
