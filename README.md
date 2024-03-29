@@ -18,6 +18,8 @@
 * [油膜特效](https://www.notion.so/df779ea50db54efdaa9656fc083acb1c)
 ### 2024.3.28: adjust second page and notice a potential bug
 * [油膜特效](https://www.notion.so/df779ea50db54efdaa9656fc083acb1c)
+### 2024.3.29: insert third pages based on another website
+* [Brittany Chiang](https://brittanychiang.com/)
 
 # What is this?
 * This is a personal website of myself, building using HTML CSS and JS
