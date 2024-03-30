@@ -45,11 +45,11 @@
   }
 
   /* Prevent text-shadows making highlighted text unreadable */
-  ::selection {
+  /* ::selection {
     background-color: highlight;
     color: highlightText;
     text-shadow: none !important;
-  }
+  } */
 
   html {
     height: 100%;
@@ -413,7 +413,8 @@ fieldset {
     --font-size-min: 14;
     --font-size-max: 16;
 
-    background-color: hsla(0deg, 0%, 0%, 0.5);
+    background-color: hsla(0, 7%, 60%, 0.5);
+    /* background-color: white; */
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-ui);
     border-radius: inherit;
@@ -571,7 +572,7 @@ nav {
 
     &::before {
       content: '';
-      border: 1px solid;
+      border: 1px solid orange;
       border-radius: 50%;
 
       display: block;
@@ -665,7 +666,7 @@ footer {
     margin-bottom: calc(var(--spacing) / 2);
 
     &::marker {
-      content: '🌷 ';
+      content: '';
       color: var(--color-highlight);
     }
   }
@@ -773,17 +774,10 @@ section:nth-child(3) {
 }
 
 section:nth-child(4) {
-  --color-highlight: var(--color-red);
-  --color-selector: var(--color-green-2);
+  --color-highlight: white;
+  --color-selector: white;
   --image: url('https://assets.codepen.io/197359/flower-red.png');
 }
-
-/* section:nth-child(5) {
-  --color-highlight: var(--color-purple);
-  --color-selector: var(--color-red-2);
-  --image: url('https://assets.codepen.io/197359/flower-purple.png');
-  --margin-top: 10dvi;
-} */
 
 @layer customize{
   html{
