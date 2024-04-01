@@ -22,6 +22,9 @@
 * [Brittany Chiang](https://brittanychiang.com/)
 ### 2024.3.30: update thrid and forth pages
 * [Brittany Chiang](https://brittanychiang.com/)
+### 2024.4.1:  using Intersection Observer to manipulate viewpoint 
+* [Intersection Observers](https://www.notion.so/Intersection-Observers-77d09f87238f472f87504bcd3013c0c7)
+* [项目总结](https://www.notion.so/b6982fe870c64cae8f7524b15138d9f2)
 
 # What is this?
 * This is a personal website of myself, building using HTML CSS and JS
