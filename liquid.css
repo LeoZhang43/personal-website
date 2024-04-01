@@ -1,0 +1,48 @@
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.handwritten{
+    pointer-events: none;
+    z-index: 11;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    font-size: 40px;
+}
+
+#aboutme-part{
+    padding: 0px;
+    .content{
+        padding: 256px;
+        color: black;
+        pointer-events: none;
+        z-index: 11;
+    }
+}
+
+.liquid-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#liquid-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.liquid-overlay {
+    position: absolute;
+    top: 30%;
+    left: 30%
+}
+
+#aboutme-part{
+    position: relative;
+}

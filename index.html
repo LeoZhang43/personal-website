@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="godray.css">
+        <link rel="stylesheet" href="liquid.css">
+        <link rel="stylesheet" href="education.css">
+        <link rel="stylesheet" href="concatme.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="site-header">
+          <img src="backgroundRemove.png" alt="" id="avater-img">
+          <h1 class="sr-only">Yuhang's personal website</h1>
+        
+          <!-- Because Chrome crashes if an overflow is set on the fieldset while a named timeline is on a child element -->
+          <!-- ¯\_(ツ)_/¯ -->
+          <div class="fieldset-wrapper">
+            <fieldset id="nav-bar">
+              <legend class="sr-only">label</legend>
+      
+              <!-- radio buttons for each of the @keyframes above -->
+              <input type="radio" id="intro" name="effect" value="blink" checked class="sr-only">
+              <label for="intro" value="intro">Intro</label>
+      
+              <input type="radio" id="aboutme" name="effect" value="horizontal-scroll" class="sr-only">
+              <label for="aboutme" value="aboutme">About me</label>
+      
+              <input type="radio" id="education" name="effect" value="backwards-scroll" class="sr-only">
+              <label for="education-works-and-projects" value="education">Education, Works and Projects</label>
+      
+              <!-- <input type="radio" id="skills" name="effect" value="zoom-scroll" class="sr-only">
+              <label for="skills" value="skills">Skills</label> -->
+              
+              <input type="radio" id="contactme" name="effect" value="zoom-scroll" class="sr-only">
+              <label for="contact-me" value="contactme">Contact Me</label>
+            </fieldset>
+          </div>
+      
+          <nav>
+            <ul class="indicator" id="indicator">
+              <li><a href="#intro-part" value="intro" id="intro-li"></a></li>
+              <li><a href="#aboutme-part" value="aboutme" id="aboutme-li"></a></li>
+              <li><a href="#education-part" value="education" id="education-li"></a></li>
+              <!-- <li><a href="#skills-part" value="skills" id="skills-li"></a></li> -->
+              <li><a href="#contactme-part" value="contactme" id="contactme-li"></a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <section id="intro-part" class="section">
+            <div class="intro-background"></div>
+            <div class="content">
+              <h2><strong>Hi</strong>, I'm <em>Yuhang Zhang</em>, a frontend developer</h2>
+              <div class="text">
+                <h4>
+                  I'm a computer engineer student
+                  who is right now pursuing my master degree
+                  at <code class="selector">University of Southern California</code>.
+                  I've 1 year of working experience in <code class="property">frontend 
+                  development</code>.I love dogs, running and arcade video games
+                </h4>
+              </div>
+            </div>
+          </section>
+          <section id="aboutme-part" class="section">
+            <div class="liquid-content">
+                <img id="liquid-img" src="onthebattleship.jpg"/>
+            </div>
+            <canvas id="liquid-canvas"></canvas>
+            <div class="handwritten" style="font-family: 'Kalam', cursive;">
+              <p>(Move your mouse on the screen to break the oil film)</p>
+            </div>
+            <div class="content">
+              <div class="text">
+                <h6>
+                  My journey into the world of coding began with a 
+                  decision to immerse myself in the intricate art of 
+                  crafting digital experiences. Over the past couple 
+                  of years, I've delved deep into 
+                  <code class="selector">frontend development</code>, 
+                  honing my skills to create captivating user 
+                  interfaces that seamlessly blend functionality with 
+                  aesthetics.During a transformative summer break, 
+                  I had the opportunity to work with a 
+                  <code class="selector">tech startup based</code>
+                  in <code class="property">Los Angeles</code>. 
+                  Those three months were invaluable, allowing me to immerse myself 
+                  in real-world projects and witness firsthand the 
+                  exhilarating pace of innovation in the tech 
+                  industry. This experience not only bolstered my 
+                  technical proficiency but also instilled in me a 
+                  deep appreciation for the importance of 
+                  <code class="selector">workflow</code>
+                  efficiency and 
+                  <code class="selector">collaborative teamwork</code>.
+                </h6>
+              </div>
+              <div class="text">
+                <h6>
+                  Reflecting on my journey thus far, I've come to 
+                  realize that my career aspirations are multifaceted. 
+                  While I'm deeply passionate about pushing the 
+                  boundaries of 
+                  <code class="selector">CSS</code> 
+                  to create 
+                  <code class="property">visually stunning animations</code>
+                  , I'm also 
+                  intrigued by the challenge 
+                  of 
+                  <code class="selector">optimizing JavaScript for peak performance</code>. 
+                  Looking ahead, I envision myself evolving into 
+                  a versatile 
+                  <code class="selector">full-stack engineer</code>
+                  , seamlessly 
+                  bridging the realms of frontend and backend 
+                  development to create holistic solutions that 
+                  empower users and drive innovation.
+                  In essence, my journey as a software developer 
+                  is not just about mastering languages and 
+                  frameworks; it's about harnessing technology 
+                  to shape experiences, foster connections, and 
+                  drive positive change in the world. I am eager 
+                  to embark on this journey of continual growth, 
+                  exploration, and innovation, and I look forward 
+                  to the opportunities and challenges that lie ahead.
+                </h6>
+              </div>
+            </div>
+          </section>
+          <section id="education-part" class="section">
+            <div class="content">
+              <div class="experience-3 main-item-3">
+                <div class="header-3">Working Experience</div>
+                <div class="section-3">
+                  <div class="content-3">
+                    <div class="position-and-time">
+                      <div class="title-3">LISUS Technologies Inc</div>
+                      <div class="time-3">2023.5-2023.7</div>
+                    </div>
+                    <div class="position-3">Front-end Engineer Intern</div>
+                    <p class="description-3">
+                      Build a new version of official website using React and Redux
+                    </p>
+                    <p class="description-3">
+                      Designing a JSON file to transfer date from front to end
+                    </p>
+                    <p class="description-3">
+                      Implementing a build in google map for position selection
+                    </p>
+                    </p>
+                  </div>
+                </div>
+                <div class="header-3">Education</div>
+                <div class="section-3">
+                  <div class="content-3">
+                    <div class="position-and-time">
+                      <div class="title-3">University of Southern California</div>
+                      <div class="time-3">2023.1-2024.12</div>
+                    </div>
+                    <div class="position-3">Master</div>
+                    <div class="position-3">Computer Engineering</div>
+                  </div>
+                </div>
+              </div>
+              <div class="experience-3 main-item-3">
+                <a href="https://github.com/LeoZhang43/personal-website/tree/readme-edits" target="_blank">
+                  <div class="section-3">
+                    <div class="content-3">
+                      <div class="position-and-time">
+                        <div class="title-3">Personal Website</div>
+                        <div class="time-3">2024.3-PRESENT</div>
+                      </div>
+                      <p class="description-3">
+                        Use HTML, CSS and JavaScript to implement a 
+                        personal website that can be accessed in real 
+                        time and keep it updated on Github 
+                      </p>
+                      <p class="description-3">
+                        Utilizing event delegation features to operate 
+                        DOM elements and improving efficiency by 
+                        reducing the number of listeners
+                      </p>
+                      <ul class="techStack">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>DOM</li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://github.com/LeoZhang43/Quick-Reliable-File-Transfer" target="_blank">
+                  <div class="section-3">
+                    <div class="content-3">
+                      <div class="position-and-time">
+                        <div class="title-3">Fast and reliable file transfer protocol</div>
+                        <div class="time-3">2023.9-2023.10</div>
+                      </div>
+                      <p class="description-3">
+                        Using TCP, UDP and multi-threading, it successfully achieved high packet loss rate, high latency and fixed File transfer protocol in a high-bandwidth network environment
+                      </p>
+                      <p class="description-3">
+                        Implemented a customized network environment on AWS by deploying client, router and server virtual machines and setting interface characteristics
+                      </p>
+                      <ul class="techStack">
+                        <li>TCP/UDP</li>
+                        <li>AWS</li>
+                        <li>Transfer Prototype</li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://github.com/LeoZhang43/flyingBirds/tree/testVersion" target="_blank">
+                  <div class="section-3">
+                    <div class="content-3">
+                      <div class="position-and-time">
+                        <div class="title-3">Flying Birds Game</div>
+                        <div class="time-3">2024.1-2024.2</div>
+                      </div>
+                      <p class="description-3">
+                        Using HTML, CSS and JavaScript, designed and implemented a page-side Mini game
+                      </p>
+                      <p class="description-3">
+                        Implement a set of physics engines with gravity effects and collision detection through JS class-oriented design methods
+                      </p>
+                      <ul class="techStack">
+                        <li>Video Games</li>
+                        <li>JavaScript</li>
+                        <li>Physical Engine</li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+          <section id="contactme-part" class="section">
+            <div class="content">
+              <h2 style="font-family: 'Kalam', cursive;">Feel free to contact me</h2>
+              <ul>
+                <li><a href="https://www.linkedin.com/in/yuhang-zhang-5bba6726a/" id="linkedIn" target="_blank"><span>LinkedIn</span></a></li>
+                <li><a href="https://github.com/LeoZhang43" id="Github"  target="_blank"><span>Github</span></a></li>
+                <li><a href="mailto:yzhang43@usc.com" id="Gmail"><span>Gmail</span></a></li>
+                <li><a href="" id="Wechat"><span>Wechat:Leo43USC</span></a></li>
+              </ul>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <p>That's it <span class="emoji">🌸</span></p>
+        </footer>
+        <script type="x-shader/x-fragment" id="vertShader">
+            precision highp float;
+        
+            attribute vec2 aPosition;
+            varying vec2 vUv;
+            varying vec2 vL;
+            varying vec2 vR;
+            varying vec2 vT;
+            varying vec2 vB;
+            uniform vec2 u_vertex_texel;
+        
+            void main () {
+                vUv = aPosition * .5 + .5;
+                vL = vUv - vec2(u_vertex_texel.x, 0.);
+                vR = vUv + vec2(u_vertex_texel.x, 0.);
+                vT = vUv + vec2(0., u_vertex_texel.y);
+                vB = vUv - vec2(0., u_vertex_texel.y);
+                gl_Position = vec4(aPosition, 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderAdvection">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying vec2 vUv;
+            uniform sampler2D u_velocity_txr;
+            uniform sampler2D u_input_txr;
+            uniform vec2 u_vertex_texel;
+            uniform vec2 u_output_textel;
+            uniform float u_dt;
+            uniform float u_dissipation;
+        
+            vec4 bilerp (sampler2D sam, vec2 uv, vec2 tsize) {
+                vec2 st = uv / tsize - 0.5;
+        
+                vec2 iuv = floor(st);
+                vec2 fuv = fract(st);
+        
+                vec4 a = texture2D(sam, (iuv + vec2(0.5, 0.5)) * tsize);
+                vec4 b = texture2D(sam, (iuv + vec2(1.5, 0.5)) * tsize);
+                vec4 c = texture2D(sam, (iuv + vec2(0.5, 1.5)) * tsize);
+                vec4 d = texture2D(sam, (iuv + vec2(1.5, 1.5)) * tsize);
+        
+                return mix(mix(a, b, fuv.x), mix(c, d, fuv.x), fuv.y);
+            }
+        
+            void main () {
+                vec2 coord = vUv - u_dt * bilerp(u_velocity_txr, vUv, u_vertex_texel).xy * u_vertex_texel;
+                gl_FragColor = u_dissipation * bilerp(u_input_txr, coord, u_output_textel);
+                gl_FragColor.a = 1.;
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderDivergence">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying highp vec2 vUv;
+            varying highp vec2 vL;
+            varying highp vec2 vR;
+            varying highp vec2 vT;
+            varying highp vec2 vB;
+            uniform sampler2D u_velocity_txr;
+        
+            void main () {
+                float L = texture2D(u_velocity_txr, vL).x;
+                float R = texture2D(u_velocity_txr, vR).x;
+                float T = texture2D(u_velocity_txr, vT).y;
+                float B = texture2D(u_velocity_txr, vB).y;
+        
+                float div = .5 * (R - L + T - B);
+                gl_FragColor = vec4(div, 0., 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderPressure">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying highp vec2 vUv;
+            varying highp vec2 vL;
+            varying highp vec2 vR;
+            varying highp vec2 vT;
+            varying highp vec2 vB;
+            uniform sampler2D u_pressure_txr;
+            uniform sampler2D u_divergence_txr;
+        
+            void main () {
+                float L = texture2D(u_pressure_txr, vL).x;
+                float R = texture2D(u_pressure_txr, vR).x;
+                float T = texture2D(u_pressure_txr, vT).x;
+                float B = texture2D(u_pressure_txr, vB).x;
+                float C = texture2D(u_pressure_txr, vUv).x;
+                float divergence = texture2D(u_divergence_txr, vUv).x;
+                float pressure = (L + R + B + T - divergence) * 0.25;
+                gl_FragColor = vec4(pressure, 0., 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderGradientSubtract">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying highp vec2 vUv;
+            varying highp vec2 vL;
+            varying highp vec2 vR;
+            varying highp vec2 vT;
+            varying highp vec2 vB;
+            uniform sampler2D u_pressure_txr;
+            uniform sampler2D u_velocity_txr;
+        
+            void main () {
+                float L = texture2D(u_pressure_txr, vL).x;
+                float R = texture2D(u_pressure_txr, vR).x;
+                float T = texture2D(u_pressure_txr, vT).x;
+                float B = texture2D(u_pressure_txr, vB).x;
+                vec2 velocity = texture2D(u_velocity_txr, vUv).xy;
+                velocity.xy -= vec2(R - L, T - B);
+                gl_FragColor = vec4(velocity, 0., 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderPoint">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying vec2 vUv;
+            uniform sampler2D u_input_txr;
+            uniform float u_ratio;
+            uniform vec3 u_point_value;
+            uniform vec2 u_point;
+            uniform float u_point_size;
+        
+            void main () {
+                vec2 p = vUv - u_point.xy;
+                p.x *= u_ratio;
+                vec3 splat = pow(2., -dot(p, p) / u_point_size) * u_point_value;
+                vec3 base = texture2D(u_input_txr, vUv).xyz;
+                gl_FragColor = vec4(base + splat, 1.);
+            }
+        </script>
+        
+        <script type="x-shader/x-fragment" id="fragShaderDisplay">
+            precision highp float;
+            precision highp sampler2D;
+        
+            varying vec2 vUv;
+            uniform sampler2D u_output_texture;
+        
+            void main () {
+                vec3 C = texture2D(u_output_texture, vUv).rgb;
+                float a = max(C.r, max(C.g, C.b));
+                a = pow(.1 * a, .1);
+                a = clamp(a, 0., 1.);
+                gl_FragColor = vec4(1. - C, 1. - a);
+            }
+        </script>
+        <script src="script.js"></script>
+        <script src="liquid.js"></script>
+    </body>
+</html>
